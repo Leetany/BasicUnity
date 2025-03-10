@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ConditionExample : MonoBehaviour
 {
-    //¿¬»êÀÚ¿Í Á¶°Ç¹®
+    //ì—°ì‚°ìì™€ ì¡°ê±´ë¬¸
     public int health = 100;
 
     void Update()
@@ -10,7 +10,7 @@ public class ConditionExample : MonoBehaviour
         health -= 1;
         Debug.Log("Health : " + health);
 
-        //Á¶°Ç¹®
+        //ì¡°ê±´ë¬¸
         if(health <= 0)
         {
             Debug.Log("Game Over!");

@@ -4,7 +4,7 @@ public class VectorStudy : MonoBehaviour
 {
     //public Vector2 v2 = new Vector2(10, 10);
     //public Vector3 v3 = new Vector3(1, 1, 1);
-    //public Vector4 v4 = new Vector4(1.0f, 0.5f, 0.0f, 1.0f);   //»ö Ç¥ÇöÇÒ ¶§ »ç¿ë
+    //public Vector4 v4 = new Vector4(1.0f, 0.5f, 0.0f, 1.0f);   //ìƒ‰ í‘œí˜„í•  ë•Œ ì‚¬ìš©
 
     void Start()
     {
@@ -15,15 +15,15 @@ public class VectorStudy : MonoBehaviour
 
         Debug.Log("Vector" + c);
 
-        Debug.Log("±æÀÌ : " + c.magnitude);*/
+        Debug.Log("ê¸¸ì´ : " + c.magnitude);*/
 
-        //Á¤±ÔÈ­ normalize
-        //º¤ÅÍÀÇ Å©±â¸¦ 1·Î ¸¸µé°í ¹æÇâ¸¸ À¯Áö
-        Vector3 a = new Vector3(3, 0, 0);
+        //ì •ê·œí™” normalize
+        //ë²¡í„°ì˜ í¬ê¸°ë¥¼ 1ë¡œ ë§Œë“¤ê³  ë°©í–¥ë§Œ ìœ ì§€
+        Vector3 a = new Vector3(3, 0, 0); 
 
         Vector3 normalizedVector = a.normalized;
 
-        Debug.Log("1ÀÇ ±æÀÌ ¹æÇâ¸¸ ¼³Á¤ÇÏ´Â Á¤±ÔÈ­ " + normalizedVector);
+        Debug.Log("1ì˜ ê¸¸ì´ ë°©í–¥ë§Œ ì„¤ì •í•˜ëŠ” ì •ê·œí™” " + normalizedVector);
 
 
     }

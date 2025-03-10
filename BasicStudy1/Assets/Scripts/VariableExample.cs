@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class VariableExample : MonoBehaviour
 {
-    //º¯¼ö ¼±¾ð
+    //ë³€ìˆ˜ ì„ ì–¸
     public int playerScore = 0;
     public float speed = 5.5f;
     public string playerName = "Hero";
@@ -11,7 +11,7 @@ public class VariableExample : MonoBehaviour
 
     void Start()
     {
-        //º¯¼öÃâ·Â
+        //ë³€ìˆ˜ì¶œë ¥
         Debug.Log("Player Name : " + playerName);
         Debug.Log("Player Score : " + playerScore);
         Debug.Log("Speed : " + speed);

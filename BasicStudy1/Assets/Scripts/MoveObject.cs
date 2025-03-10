@@ -3,16 +3,16 @@ using UnityEngine.InputSystem.Controls;
 
 public class MoveObject : MonoBehaviour
 {
-    public float speed = 5.0f; //ÀÌµ¿¼Óµµ
+    public float speed = 5.0f; //ì´ë™ì†ë„
 
     
     void Update()
     {
         /*Vector3 a = Vector3.right;
 
-        //Å° ÀÔ·Â¿¡ µû¶ó ÀÌµ¿
+        //í‚¤ ì…ë ¥ì— ë”°ë¼ ì´ë™
         float move = Input.GetAxis("Horizontal");
-        // ¹æÇâ * ½ºÇÇµå * Å¸ÀÓµ¨Å¸Å¸ÀÓ
+        // ë°©í–¥ * ìŠ¤í”¼ë“œ * íƒ€ì„ë¸íƒ€íƒ€ì„
         transform.Translate(Vector3.right * move * speed * Time.deltaTime);*/
 
         Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
