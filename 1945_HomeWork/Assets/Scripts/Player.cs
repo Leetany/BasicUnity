@@ -10,6 +10,16 @@ public class Player : MonoBehaviour
 
     Animator ani;  //애니메이터를 가져올 변수
 
+    GameObject bullet;  //총알 추후 4개 배열로 만들 예정
+
+    public GameObject[] bullet1 = new GameObject[4];
+    public Transform pos = null;    //발사 위치?
+
+    int i = 1;
+    //아이템
+    
+    //레이저
+
     void Start()
     {
         //프로그래밍으로 화면 못나가게 하기
@@ -19,7 +29,8 @@ public class Player : MonoBehaviour
 
         //minBounds = new Vector2(bottomLeft.x, bottomLeft.y);
         //maxBounds = new Vector2(topRight.x, topRight.y);
-
+        
+        bullet = bullet1[0];
         ani = GetComponent<Animator>();
     }
 
@@ -45,8 +56,22 @@ public class Player : MonoBehaviour
             ani.SetBool("up", true);
         else
             ani.SetBool("up", false);
+        
+        //스페이스바
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            //프리팹 위치 방향 넣고 생성
+            Instantiate(bullet, pos.position, Quaternion.identity);
+        }    
 
-            transform.Translate(moveX, moveY, 0);
+        transform.Translate(moveX, moveY, 0);
+
+        //캐릭터의 월드 좌표를 뷰 포트 좌표계로 변환해준다.
+        Vector3 viewPos = Camera.main.WorldToViewportPoint(transform.position);
+        viewPos.x = Mathf.Clamp01(viewPos.x);
+        viewPos.y = Mathf.Clamp01(viewPos.y);
+        Vector3 worldPos = Camera.main.ViewportToWorldPoint(viewPos);
+        transform.position = worldPos;
 
         //프로그래밍으로 화면 못나가게 하기
         //Vector3 newPosition = transform.position + new Vector3(moveX, moveY, 0);
@@ -55,5 +80,20 @@ public class Player : MonoBehaviour
         //newPosition.y = Mathf.Clamp(newPosition.y, minBounds.y, maxBounds.y);
 
         //transform.position = newPosition;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Item"))
+        {
+            Destroy(collision.gameObject);
+
+            bullet = bullet1[i];
+            if(i<5)
+            {
+                i++;
+            }
+
+        }
     }
 }
