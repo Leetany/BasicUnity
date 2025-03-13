@@ -2,16 +2,16 @@ using UnityEngine;
 
 public class BackgroundRepeat : MonoBehaviour
 {
-    //½ºÅ©·ÑÇÒ ¼Óµµ¸¦ »ó¼ö·Î ÁöÁ¤ÇØ Áİ´Ï´Ù.
+    //ìŠ¤í¬ë¡¤í•  ì†ë„ë¥¼ ìƒìˆ˜ë¡œ ì§€ì •í•´ ì¤ë‹ˆë‹¤.
     public float scrollSpeed = 1.2f;
-    //ÄõµåÀÇ ¸ÓÅÍ¸®¾ó µ¥ÀÌÅÍ¸¦ ¹Ş¾Æ¿Ã °´Ã¼¸¦ ¼±¾ğÇÕ´Ï´Ù.
+    //ì¿¼ë“œì˜ ë¨¸í„°ë¦¬ì–¼ ë°ì´í„°ë¥¼ ë°›ì•„ì˜¬ ê°ì²´ë¥¼ ì„ ì–¸í•©ë‹ˆë‹¤.
     private Material thisMaterial;
 
     void Start()
     {
-        //°´Ã¼°¡ »ı¼ºµÉ ¶§ ÃÖÃÊ 1È¸ È£ÃâµÇ´Â ÇÔ¼ö
-        //ÇöÀç °´Ã¼ÀÇ ComponentµéÀ» ÂüÁ¶ÇØ Render¶ó´Â ÄÄÆ÷³ÍÆ®ÀÇ MaterialÁ¤º¸
-        //¹Ş¾Æ¿É´Ï´Ù.
+        //ê°ì²´ê°€ ìƒì„±ë  ë•Œ ìµœì´ˆ 1íšŒ í˜¸ì¶œë˜ëŠ” í•¨ìˆ˜
+        //í˜„ì¬ ê°ì²´ì˜ Componentë“¤ì„ ì°¸ì¡°í•´ Renderë¼ëŠ” ì»´í¬ë„ŒíŠ¸ì˜ Materialì •ë³´
+        //ë°›ì•„ì˜µë‹ˆë‹¤.
 
         thisMaterial = GetComponent<Renderer>().material;
 
@@ -20,11 +20,11 @@ public class BackgroundRepeat : MonoBehaviour
     
     void Update()
     {
-        //»õ·Ó°Ô ÁöÁ¤ÇØÁÙ Offset °´Ã¼¸¦ ¼±¾ğÇÕ´Ï´Ù.
+        //ìƒˆë¡­ê²Œ ì§€ì •í•´ì¤„ Offset ê°ì²´ë¥¼ ì„ ì–¸í•©ë‹ˆë‹¤.
         Vector2 newoffset = thisMaterial.mainTextureOffset;
-        //YºÎºĞ¿¡ ÇöÀç y°ª¿¡ ¼Óµµ¿¡ ÇÁ·¹ÀÓ º¸Á¤ÇØ¼­ ´õÇØÁİ´Ï´Ù.
+        //Yë¶€ë¶„ì— í˜„ì¬ yê°’ì— ì†ë„ì— í”„ë ˆì„ ë³´ì •í•´ì„œ ë”í•´ì¤ë‹ˆë‹¤.
         newoffset.Set(0, newoffset.y + (scrollSpeed * Time.deltaTime));
-        //ÃÖÁ¾ÀûÀ¸·Î offset°ªÀ» ÁöÁ¤ÇØÁİ´Ï´Ù.
-        thisMaterial.mainTextureOffset = newoffset;
+        //ìµœì¢…ì ìœ¼ë¡œ offsetê°’ì„ ì§€ì •í•´ì¤ë‹ˆë‹¤.
+        thisMaterial.mainTextureOffset = newoffset; 
     }
 }
