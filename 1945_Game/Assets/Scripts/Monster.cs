@@ -7,6 +7,7 @@ public class Monster : MonoBehaviour
     public Transform ms1;
     public Transform ms2;
     public GameObject bullet;
+    public GameObject item;
 
 
     void Start()
@@ -35,5 +36,18 @@ public class Monster : MonoBehaviour
     private void OnBecameInvisible()
     {
         Destroy(gameObject);
+    }
+
+    //미사일에 따른 데미지 입는 함수
+    public void Damage(int attack)
+    {
+        ItemDrop();
+        Destroy(gameObject);
+    }
+
+    public void ItemDrop()
+    {
+        //아이템 생성
+        Instantiate(item, transform.position, Quaternion.identity);
     }
 }
