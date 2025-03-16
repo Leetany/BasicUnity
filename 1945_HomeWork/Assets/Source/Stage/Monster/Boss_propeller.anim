@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Monster2
+  m_Name: Boss_propeller
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,9 +21,13 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -504725928, guid: 22c191ba96998274fabef09b31a49b31, type: 3}
+      value: {fileID: -1402673726238237314, guid: 9ba12e07d15e17e46b187236201ba6ac, type: 3}
     - time: 0.083333336
-      value: {fileID: 487064754, guid: 22c191ba96998274fabef09b31a49b31, type: 3}
+      value: {fileID: 5925226018228665192, guid: 9ba12e07d15e17e46b187236201ba6ac, type: 3}
+    - time: 0.16666667
+      value: {fileID: -5687253349893216373, guid: 9ba12e07d15e17e46b187236201ba6ac, type: 3}
+    - time: 0.25
+      value: {fileID: 4985649396477603258, guid: 9ba12e07d15e17e46b187236201ba6ac, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -46,14 +50,16 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -504725928, guid: 22c191ba96998274fabef09b31a49b31, type: 3}
-    - {fileID: 487064754, guid: 22c191ba96998274fabef09b31a49b31, type: 3}
+    - {fileID: -1402673726238237314, guid: 9ba12e07d15e17e46b187236201ba6ac, type: 3}
+    - {fileID: 5925226018228665192, guid: 9ba12e07d15e17e46b187236201ba6ac, type: 3}
+    - {fileID: -5687253349893216373, guid: 9ba12e07d15e17e46b187236201ba6ac, type: 3}
+    - {fileID: 4985649396477603258, guid: 9ba12e07d15e17e46b187236201ba6ac, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.16666667
+    m_StopTime: 0.33333334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

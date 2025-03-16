@@ -1,8 +1,10 @@
-﻿using UnityEngine;
+﻿using Unity.VisualScripting;
+using UnityEngine;
 
-public class BackGround : MonoBehaviour
+public class Background : MonoBehaviour
 {
     public float scrollSpeed = 0.01f;
+
     Material myMaterial;
 
 
