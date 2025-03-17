@@ -5,7 +5,6 @@ public class Boss : MonoBehaviour
 {
     int flag = 1;
     int speed = 2;
-    Vector3 target = new Vector3(0, 3.328f, 0);
 
 
     void Start()
@@ -16,6 +15,15 @@ public class Boss : MonoBehaviour
     
     void Update()
     {
-        transform.position = Vector3.Lerp(transform.position, target, speed * Time.deltaTime);
+        if(transform.position.x >= 1)
+        {
+            flag *= -1;
+        }
+        if(transform.position.x <= -1)
+        {
+            flag *= -1;
+        }
+
+        //transform.Translate(flag * speed * Time.deltaTime, 0, 0);
     }
 }

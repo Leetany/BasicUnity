@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class SpawnManager : MonoBehaviour
 {
@@ -9,10 +10,20 @@ public class SpawnManager : MonoBehaviour
     public float SpawnStop = 10;  //스폰끝나는 시간
     public GameObject monster;
     public GameObject monster2;
+    public GameObject Boss;
 
     bool swi = true;
     bool swi2 = true;
-    
+
+    [SerializeField]
+    GameObject textBossWarning;
+
+    private void Awake()
+    {
+        textBossWarning.SetActive(false);
+
+        PoolManager.Instance.CreatePool(monster, 10);
+    }
     void Start()
     {
         StartCoroutine(RandomSpawn());
@@ -31,6 +42,8 @@ public class SpawnManager : MonoBehaviour
             //y값은 자기자신 값
             Vector2 r = new Vector2(x, transform.position.y);
             Instantiate(monster, r, Quaternion.identity);
+            //GameObject Enemy = PoolManager.Instance.Get(monster);
+            //Enemy.transform.position = r;
         }
     }
 
@@ -63,6 +76,9 @@ public class SpawnManager : MonoBehaviour
     {
         swi2 = false;
         StopCoroutine("RandomSpawn2");
+        textBossWarning.SetActive(true);
         //보스
+        Vector3 targetpos = new Vector3(0, 2.97f, 0);
+        GameObject go = Instantiate(Boss, targetpos, Quaternion.identity);
     }
 }
