@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -25,6 +26,8 @@ public class Player : MonoBehaviour
     //레이저
     public GameObject lazer;
     public float gValue = 0;
+
+    public Image Gage;
 
     void Start()
     {
@@ -71,6 +74,7 @@ public class Player : MonoBehaviour
         else if(Input.GetKey(KeyCode.Space))
         {
             gValue += Time.deltaTime;
+            Gage.fillAmount = gValue;
 
             if(gValue >=1)
             {
@@ -87,6 +91,8 @@ public class Player : MonoBehaviour
             {
                 gValue = 0;
             }
+
+            Gage.fillAmount = gValue;
         }
 
 
