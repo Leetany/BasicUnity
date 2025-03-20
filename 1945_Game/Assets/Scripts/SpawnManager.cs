@@ -77,8 +77,19 @@ public class SpawnManager : MonoBehaviour
         swi2 = false;
         StopCoroutine("RandomSpawn2");
         textBossWarning.SetActive(true);
+        StartCoroutine(Shake());
         //보스
         Vector3 targetpos = new Vector3(0, 2.97f, 0);
         GameObject go = Instantiate(Boss, targetpos, Quaternion.identity);
+    }
+
+    IEnumerator Shake()
+    {
+        yield return new WaitForSeconds(0.2f);
+        CameraShake.instance.CameraShakeShow();
+        yield return new WaitForSeconds(0.2f);
+        CameraShake.instance.CameraShakeShow();
+        yield return new WaitForSeconds(0.2f);
+        CameraShake.instance.CameraShakeShow();
     }
 }
